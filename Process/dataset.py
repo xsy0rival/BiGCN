@@ -7,7 +7,7 @@ from torch_geometric.data import Data
 
 class GraphDataset(Dataset):
     def __init__(self, fold_x, treeDic,lower=2, upper=100000, droprate=0,
-                 data_path=os.path.join('..','..', 'data', 'Weibograph')):
+                 data_path='/Users/xiaosy/PycharmProjects/BiGCN/data/Weibo/Weibograph'):
         self.fold_x = list(filter(lambda id: id in treeDic and len(treeDic[id]) >= lower and len(treeDic[id]) <= upper, fold_x))
         self.treeDic = treeDic
         self.data_path = data_path
@@ -41,7 +41,7 @@ def collate_fn(data):
 
 class BiGraphDataset(Dataset):
     def __init__(self, fold_x, treeDic,lower=2, upper=100000, tddroprate=0,budroprate=0,
-                 data_path=os.path.join('..','..', 'data', 'Weibograph')):
+                 data_path='/Users/xiaosy/PycharmProjects/BiGCN/data/Weibo/Weibograph'):
         self.fold_x = list(filter(lambda id: id in treeDic and len(treeDic[id]) >= lower and len(treeDic[id]) <= upper, fold_x))
         self.treeDic = treeDic
         self.data_path = data_path
@@ -86,7 +86,7 @@ class BiGraphDataset(Dataset):
 
 class UdGraphDataset(Dataset):
     def __init__(self, fold_x, treeDic,lower=2, upper=100000, droprate=0,
-                 data_path=os.path.join('..','..','data', 'Weibograph')):
+                 data_path='/Users/xiaosy/PycharmProjects/BiGCN/data/Weibo/Weibograph'):
         self.fold_x = list(filter(lambda id: id in treeDic and len(treeDic[id]) >= lower and len(treeDic[id]) <= upper, fold_x))
         self.treeDic = treeDic
         self.data_path = data_path
